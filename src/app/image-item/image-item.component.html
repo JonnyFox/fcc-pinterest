@@ -1,0 +1,11 @@
+<div class="image-container" [@selected]="image.isSelected">
+    <img [src]="image?.url" />
+    <div class="image-footer-container">
+        <div class="image-title">{{image?.title}}</div>
+        <div class="image-star" *ngIf="showStar" (click)="onStarClick($event, image)">
+            <div>{{image.likes?.length}}</div>
+            <md-icon *ngIf="!image.isSelected">star_border</md-icon>
+            <md-icon *ngIf="image.isSelected">star</md-icon>
+        </div>
+    </div>
+</div>

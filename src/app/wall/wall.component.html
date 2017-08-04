@@ -1,0 +1,13 @@
+<masonry>
+    <masonry-brick *ngFor="let image of $images | async">
+        <fp-image-item [image]="image" [showStar]="false" (click)="selectImage(image)"></fp-image-item>
+    </masonry-brick>
+</masonry>
+<div class="fab-button-container animated">
+    <button md-fab class="fab-button">
+        <div [@spinned]="$isSelectionMode | async" (@spinned.done)="spinDone()">
+            <md-icon *ngIf="!isSelectionMode" (click)="addImage()">add</md-icon>
+            <md-icon *ngIf="isSelectionMode" (click)="removeImages()">remove</md-icon>
+        </div>
+    </button>
+</div>

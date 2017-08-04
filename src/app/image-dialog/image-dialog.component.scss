@@ -1,0 +1,33 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    align-content: center;
+
+    & .input-container {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    & .new-image-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+
+        & img {
+            align-self: center;
+            justify-content: center;
+            height: inherit;
+        }
+    }
+}
+
+.button-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}

@@ -1,0 +1,17 @@
+<md-toolbar color="primary" class="fixed">
+    <div *ngIf="($identity | async)">
+        <button md-button routerLink="/dashboard">Pinterest app</button>
+        <button md-button routerLink="/wall">Wall</button>
+    </div>
+    <span class="app-toolbar-filler"></span>
+    <div *ngIf="!($identity | async)" class="centered" id="{{googleLoginButtonId}}"></div>
+    <div *ngIf="($identity | async)" class="pull-right identity-container">
+        <img [src]="($identity | async)?.imageUrl" class="identity-image">
+        <div>
+            <button md-button (click)="logout()">{{($identity | async)?.name}}</button>
+        </div>
+    </div>
+</md-toolbar>
+<div *ngIf="($identity | async)" class="app-content">
+    <router-outlet></router-outlet>
+</div>
